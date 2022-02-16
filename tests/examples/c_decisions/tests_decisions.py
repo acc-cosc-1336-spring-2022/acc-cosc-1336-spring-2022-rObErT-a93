@@ -1,7 +1,6 @@
 import unittest
-from webbrowser import get
 
-from src.examples.c_decisions.decisions import get_letter_grade, is_even, test_config
+from src.examples.c_decisions.decisions import get_letter_grade, is_even, is_letter_consonant, logical_op_precedence, num_is_not_in_range_or, number_is_in_range_and, number_is_not_in_range, test_config
 
 class Test_Config(unittest.TestCase):
 
@@ -32,8 +31,31 @@ class Test_Config(unittest.TestCase):
         self.assertEqual('a' > 'A', True)
 
     def test_get_letter_grade(self):
+        self.assertEqual('Invalid Number', get_letter_grade(1000))
         self.assertEqual('A', get_letter_grade(90))
         self.assertEqual('B', get_letter_grade(85))
         self.assertEqual('C', get_letter_grade(74))
         self.assertEqual('D', get_letter_grade(63))
         self.assertEqual('F', get_letter_grade(54))
+        self.assertEqual('Invalid Number', get_letter_grade(-10))
+
+    def test_logical_op_precedence(self):
+        self.assertEqual(True, logical_op_precedence(True, False, True))
+        self.assertEqual(False, logical_op_precedence(False, False, False))
+
+    def test_number_is_in_range_and(self):
+        self.assertEqual(True, number_is_in_range_and(20, 100, 50))
+        self.assertEqual(True, number_is_in_range_and(20, 100, 20))
+        self.assertEqual(True, number_is_in_range_and(20, 100, 100))
+        self.assertEqual(False, number_is_in_range_and(20, 100, 101))
+
+    def test_number_is_not_in_range(self):
+        self.assertEqual(False, number_is_not_in_range(20, 100, 50))
+
+    def test_num_is_not_in_range_or(self):
+        self.assertEqual(False, num_is_not_in_range_or(20, 100, 50))
+        self.assertEqual(True, num_is_not_in_range_or(20, 100, 101))
+
+    def test_is_letter_consonant(self):
+        self.assertEqual(False, is_letter_consonant('a'))
+        self.assertEqual(True, is_letter_consonant('z'))
