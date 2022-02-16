@@ -1,6 +1,6 @@
 import decisions
 
-print('Rate Faculty 0.0-10.0')
+print('Please Rate Faculty 0.0-10')
 options = float(input('Enter Faculty Rating: '))
 total = int(input('Enter 10 for TOTAL: '))
 
