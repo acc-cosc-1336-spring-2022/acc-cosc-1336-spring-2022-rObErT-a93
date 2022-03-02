@@ -35,6 +35,7 @@ while option != 3:
             print('The Sum of Odd Numbers = ', repetition.sum_odd_numbers(num))
     else:
         print('You have made in invalid selection.')
+    prompt_user()
     print()
     print('Homework 3 Menu')
     menu()
