@@ -16,6 +16,7 @@ def menu():
                 print('Invalid entry {enter a value between 0 and 10}, Please try again!')
             elif(result):
                 print('The Factorial = ', repetition.get_factorial(num))
+            choice = int(input('Enter an option: '))
 
         elif choice == 2:
             print()
@@ -26,13 +27,26 @@ def menu():
                 print('Invalid entry {enter a value between 0 and 100}, Please try again!')
             elif(result):  
                 print('The Sum of Odd Numbers = ', repetition.sum_odd_numbers(num))
+            choice = int(input('Enter an option: '))
 
         else:
             print('You have made in invalid selection.')
+        choice = int(input('Enter an option: '))
 
 def prompt_user():
-    try_again = 'y'
-    while try_again == 'y':
-        try_again = input('Would you like to run program again?, y or n: ')
+    print('Would you like to calculate again? y or n: ')
+    print('[1]: Calculate again')
+    print('[2]: Main Menu')
+    cont_again = int(input('Enter an option: '))
+    while cont_again != 2:
+        if cont_again == 1:
+            print()
+            print('[1]: Calculating')
+            num = int(input('Enter a value to calculate factorial: '))
+            result = repetition.get_factorial(num)
+            if num < 0 or num > 10:
+                print('Invalid entry {enter a value between 0 and 10}, Please try again!')
+            elif(result):
+                print('The Factorial = ', repetition.get_factorial(num))
 
 menu()
