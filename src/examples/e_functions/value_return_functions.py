@@ -25,3 +25,6 @@ def get_random_number(min, max):
 def display_random_numbers(min, max, cnt):  # void function
     for i in range(cnt):
         print(random.randint(min, max))
+
+def return_first_and_last_name():
+    return 'john', 'doe'

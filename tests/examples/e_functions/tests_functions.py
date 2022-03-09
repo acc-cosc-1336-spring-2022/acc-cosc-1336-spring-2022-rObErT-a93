@@ -1,5 +1,5 @@
 import unittest
-from src.examples.e_functions.value_return_functions import get_random_number
+from src.examples.e_functions.value_return_functions import get_random_number, return_first_and_last_name
 
 from src.examples.e_functions.value_return_functions import local_variable, test_config
 
@@ -21,3 +21,8 @@ class Test_Config(unittest.TestCase):
         rand = get_random_number(1,100)
         flag = rand >= 1 and rand <= 100
         self.assertEqual(flag, True)
+
+    def test_return_name(self):
+        first, last = return_first_and_last_name()
+        self.assertEqual('john', first)
+        self.assertEqual('doe', last)
