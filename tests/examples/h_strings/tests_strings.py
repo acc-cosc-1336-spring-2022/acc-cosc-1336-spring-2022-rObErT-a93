@@ -18,3 +18,7 @@ class Test_Config(unittest.TestCase):
         sub_string = 'seven'
         self.assertEqual(True, string_sub_string(str, sub_string))
         self.assertNotEqual(True, string_sub_string(str, 'eight'))
+
+    def test_string_repetition(self):       # 3/10/2022 Lecture
+        str = 'w' * 5
+        self.assertEqual(str, 'wwwww')
