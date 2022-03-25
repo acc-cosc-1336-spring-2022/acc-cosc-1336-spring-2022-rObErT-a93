@@ -23,3 +23,12 @@ def collect_home_values():
 
     for v in home_values:   # for loop does not change original value in lists []
         print(v)
+
+def find_items_in_lists(item1, list1):      # 3/24 Lecture
+    if item1 in list1:
+        return True     # allows for function to be testable
+    else:
+        return False
+
+def append_item_to_list(item1, list1):
+    list1.append(item1)

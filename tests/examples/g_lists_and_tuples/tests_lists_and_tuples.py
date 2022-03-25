@@ -1,6 +1,6 @@
 import unittest
 
-from src.examples.g_lists_and_tuples.lists import test_config
+from src.examples.g_lists_and_tuples.lists import append_item_to_list, find_items_in_lists, test_config
 
 class Test_Config(unittest.TestCase):
 
@@ -54,3 +54,15 @@ class Test_Config(unittest.TestCase):
         expected_list = ['Tuesday','Wednesday','Thursday']
         mid_days = days[2:5]
         self.assertEqual(expected_list, mid_days)
+
+    def test_find_items_in_lists(self):
+        list1 = ["C++", "C#", "Python", "Java"]
+        self.assertEqual(True, find_items_in_lists('C++', list1))
+        self.assertEqual(False, find_items_in_lists('Ada', list1))
+
+    def test_append_item_to_list(self):
+        list1 = []
+        append_item_to_list('C++', list1)
+        append_item_to_list('Python', list1)
+        expected_list = ['C++' ,'Python']
+        self.assertEqual(expected_list, list1)
