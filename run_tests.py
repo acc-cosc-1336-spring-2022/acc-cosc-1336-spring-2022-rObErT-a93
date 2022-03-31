@@ -3,8 +3,8 @@ import unittest
 the file in /tests/homework/b_in_proc_out/tests_in_proc_out
 has the test functions
 '''
-#from tests.homework.e_functions import tests_functions
-from tests.examples.g_lists_and_tuples import tests_lists_and_tuples
+from tests.homework.h_strings import tests_strings
+#from tests.examples.g_lists_and_tuples import tests_lists_and_tuples
 
-suite = unittest.TestLoader().loadTestsFromModule(tests_lists_and_tuples)
+suite = unittest.TestLoader().loadTestsFromModule(tests_strings)
 unittest.TextTestRunner(verbosity=2).run(suite)
